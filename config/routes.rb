@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get "/cabins", to: 'cabins#index', as: 'list_of_cabins'
+
+  get '/cabins/new', to: 'cabins#new'
+  post '/cabins', to: 'cabins#create'
+
 end
