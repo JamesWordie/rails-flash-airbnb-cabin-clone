@@ -8,6 +8,6 @@ validates :name, presence: true, uniqueness: true
 # validates :price_per_night, presence: true, uniqueness: true
 # validates :number_of_guests, presence: true, uniqueness: true
 # validates :location, presence: true, uniqueness: true
-validates :user_id, presence: true,
+validates :user_id, presence: true
 
 end

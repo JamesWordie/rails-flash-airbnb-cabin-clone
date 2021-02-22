@@ -1,17 +1,14 @@
-.card-category {
+.card{
   background-size: cover;
   background-position: center;
-  height: 80px;
-  width: 25vw;
   display: flex;
   justify-content: start;
   align-items: center;
   flex-direction:column;
   color: white;
-  padding-top: 10px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   a {
     color: white;
   }
@@ -19,6 +16,22 @@
     color: white;
     text-decoration: none;
     opacity: 1;
+  }
+}
+
+.row{
+  padding: 10px 0;
+  margin: 25px 0;
+}
+
+.card-cities {
+  display: inline-flex;
+  img {
+    width: 35%;
+    border-radius:5px;
+  }
+  .card-body {
+    width: 65%;
   }
 }
 
@@ -34,11 +47,16 @@
   color: black;
 }
 
+.card-host {
+  img {
+    border-radius: 10px;
+  }
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  padding-top: 20px;
 }
 
 // Smallest device
