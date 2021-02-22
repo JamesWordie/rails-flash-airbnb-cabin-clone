@@ -4,29 +4,33 @@
 	top: 0px;
 	width: 100%;
 	height: 80px;
-	background: #FFFFFF;
+	background-color: #FFFFFF;
 }
-  
-.navbar-elements-container {
+
+.navbar-container {
 	box-align: center;
 	flex-align: center;
-    height: 100%;
-    position: relative;
+	height: 100%;
+	position: relative;
 	width: 100%;
 	justify-content: space-between;
 	padding-left: 24px;
 	padding-right: 24px;
 	margin: 0 auto;
-
-  .navbar-logo {
-	  flex-grow: 1;
-  }
-
-  .navbar-search-bar {
-	  flex-grow: 2;
-  }
-
-  .navbar-account-login {
-	  flex-grow: 1;
-  }
 }
+
+.navbar-logo {
+	flex-grow: 1;
+	justify-content: left;
+}
+
+.navbar-search-bar {
+	flex-grow: 2;
+	justify-content: center;
+}
+
+.navbar-account-login {
+	flex-grow: 1;
+	justify-content: right;
+}
+
