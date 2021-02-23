@@ -6,7 +6,6 @@ Cabin.destroy_all
 puts "Seeding database..."
 
 10.times do
-
   user = User.new(
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
@@ -28,5 +27,17 @@ puts "Seeding database..."
     )
   cabin.save!
   puts "Saving cabin"
+
+  booking_start = Faker::Date.forward(days: 365)
+  booking_end = booking_start + 1.upto(30).to_a.sample
+
+  booking = Booking.new(
+    start_date: booking_start,
+    end_date: booking_end,
+    user_id: user.id,
+    cabin_id: cabin.id
+    )
+  booking.save!
+  puts "Saving booking"
   end
 end
