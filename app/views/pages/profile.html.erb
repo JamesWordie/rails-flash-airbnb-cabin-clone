@@ -12,30 +12,22 @@ if owner = true
 
 <div class="container">
   <div class="cards">
-    <% current_user.cabins do |cabin| %>
+    <% current_user.cabins.each do |cabin| %>
     <div class="card-cabin">
       <h2><%= cabin.name %> </h2>
-      
       <p><%= cabin.description %> </p>
-    
-      
-      
-
       <%= link_to 'Edit', edit_cabin_path(cabin)  %>
       <%= link_to 'Delete', cabin_path(cabin), method: :delete  %>
-    
     </div>
     <% end %>
   </div>
   <div class="card-booking">
     <ul>
-      <% current_user.bookings do |booking| %>
+      <% current_user.bookings.each do |booking| %>
         <li>
           <%= booking %>
-
           <%= link_to 'Edit Booking', booking_path(booking) %>
           <%= link_to 'Delete Booking', booking_path(booking) %>
-
         </li>
       <% end %>
     </ul>
