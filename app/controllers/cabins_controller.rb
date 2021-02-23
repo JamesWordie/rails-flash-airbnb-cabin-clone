@@ -4,6 +4,11 @@ class CabinsController < ApplicationController
     @cabins = Cabin.all
   end
 
+  def show
+    @booking = Booking.new
+    @cabin = Cabin.find(params[:id])
+  end
+
   def new
     @cabin = Cabin.new
   end
