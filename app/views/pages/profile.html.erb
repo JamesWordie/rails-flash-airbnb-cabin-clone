@@ -26,7 +26,9 @@ if owner = true
       <% current_user.bookings.each do |booking| %>
         <li>
           <%= booking %>
-          <%= link_to 'Edit Booking', booking_path(booking) %>
+          <%= booking.start_date %>
+          <%= booking.end_date %>
+          <%= link_to 'Edit Booking', edit_booking_path(booking) %>
           <%= link_to 'Delete Booking', booking_path(booking) %>
         </li>
       <% end %>
