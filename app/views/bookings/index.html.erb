@@ -1,0 +1,13 @@
+<!-- this is going to appear underneath the navbar so i added br -->
+<br>
+<br>
+<br>
+<br>
+<p class="bookings-list">
+  <% @bookings.each do |booking| %>
+  <%= booking.user_id %>
+  <%= booking.cabin_id %>
+  <%= booking.start_date %>
+  <%= booking.end_date %>
+  <% end %>
+</p>

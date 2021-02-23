@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   get '/cabins/new', to: 'cabins#new'
   post '/cabins', to: 'cabins#create'
+  get '/user/bookings', to: 'bookings#index', as: 'list_of_bookings'
 
 end
