@@ -6,7 +6,4 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :cabins
-
-  validates :first_name, presence: true, uniqueness: true
-  validates :last_name, presence: true, uniqueness: true
 end
