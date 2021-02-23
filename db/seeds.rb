@@ -5,7 +5,7 @@ Cabin.destroy_all
 
 puts "Seeding database..."
 
-20.times do
+10.times do
 
   user = User.new(
       first_name: Faker::Name.first_name,
@@ -17,15 +17,16 @@ puts "Seeding database..."
   user.save!
   puts "Saving user"
 
-  cabin = Cabin.new(
+  1.upto(4).to_a.sample.times do
+    cabin = Cabin.new(
     user_id: user.id,
-    name: "#{user.first_name}'s cabin",
+    name: Faker::Address.community,
     description: "Really nice",
     price_per_night: 50.upto(100).to_a.sample,
     number_of_guests: 2.upto(8).to_a.sample,
     location: Faker::Nation.capital_city
     )
-
   cabin.save!
   puts "Saving cabin"
+  end
 end
