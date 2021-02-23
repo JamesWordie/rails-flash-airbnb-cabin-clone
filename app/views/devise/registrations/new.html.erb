@@ -23,6 +23,9 @@
         required: true %>
         <%= f.input :last_name,
         required: true %>
+        <%= f.input :roles,
+        as: :boolean, checked_value: true,
+        unchecked_value: false %>
       </div>
 
       <div class="form-actions">
