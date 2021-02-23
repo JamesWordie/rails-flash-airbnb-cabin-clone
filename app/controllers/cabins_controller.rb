@@ -27,6 +27,13 @@ class CabinsController < ApplicationController
     redirect_to cabins_path
   end
 
+  def destroy
+    @cabin = Cabin.find(params[:id])
+    @cabin.destroy
+
+    redirect_to cabins_path
+  end
+
   private
 
   def strong_params
