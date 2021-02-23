@@ -14,7 +14,15 @@
 			</span>
 		</div>
 	</div>
-	<div class="navbar-account-login">
-		<img src="https://www.flaticon.com/svg/vstatic/svg/848/848043.svg?token=exp=1614021820~hmac=d9da4710f099cff34eb68114bc9f5f05" class="avatar-large" alt="">
+	<div class="dropdown">
+		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Actions
+		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			<a class="dropdown-item" href="#"> <%= link_to "Login", new_user_session_path, class: "btn" %> </a>
+			<a class="dropdown-item" href="#"> <%= link_to "Sign up", new_user_registration_path, class: "btn" %> </a>
+			<a class="dropdown-item" href="#"> <%= link_to "Profile", user_session_path, class: "btn" %> </a>
+			<a class="dropdown-item" href="#"> <%= link_to "All Cabins", list_of_cabins_path, class: "btn" %> </a>
+		</div>
 	</div>
 </div>
