@@ -16,7 +16,7 @@ class CabinsController < ApplicationController
     @cabin = Cabin.new(strong_params)
     @cabin.user = current_user
     if @cabin.save
-      redirect_to cabins_path
+      redirect_to profile_path
     else
       render 'new'
     end
@@ -24,20 +24,21 @@ class CabinsController < ApplicationController
 
   def edit
     @cabin = Cabin.find(params[:id])
+    redirect_to profile_path
   end
 
   def update
     @cabin = Cabin.find(params[:id])
     @cabin.update(strong_params)
 
-    redirect_to cabins_path
+    redirect_to profile_path
   end
 
   def destroy
     @cabin = Cabin.find(params[:id])
     @cabin.destroy
 
-    redirect_to cabins_path
+    redirect_to profile_path
   end
 
   private
