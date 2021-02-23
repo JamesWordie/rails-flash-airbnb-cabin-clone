@@ -1,0 +1,32 @@
+<!-- link/form to update user
+
+loop through my bookings (current/past)??
+
+if owner = true
+  loop through cabins.each
+  dipslay all cabins where cabin.user = current_user
+  show details of cabin, link to update/destroy
+
+
+current user info -->
+<div class="container">
+  <div class="cards">
+    <% current_user.cabins do |cabin| %>
+    <div class="card-cabin">
+      <h2><%= cabin.name %> </h2>
+    </div>
+    <% end %>
+  </div>
+  <div class="card-booking">
+    <ul>
+      <% current_user.bookings do |booking| %>
+        <li>
+          <%= booking %>
+          <%#= booking.start_date %> - <%= booking.end_date %>
+          <%#= booking.number_of_guests %>
+          <%#= booking.price_per_night %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
