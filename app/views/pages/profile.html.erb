@@ -14,6 +14,7 @@ current user info -->
     <% current_user.cabins do |cabin| %>
     <div class="card-cabin">
       <h2><%= cabin.name %> </h2>
+      <p><%= cabin.description %> </p>
     </div>
     <% end %>
   </div>
@@ -23,8 +24,6 @@ current user info -->
         <li>
           <%= booking %>
           <%#= booking.start_date %> - <%= booking.end_date %>
-          <%#= booking.number_of_guests %>
-          <%#= booking.price_per_night %>
         </li>
       <% end %>
     </ul>
