@@ -1,6 +1,10 @@
-<br>
-<br>
-<br>
-hello
+<h1>Here are some of our cabins:</h1>
 
-<%= @cabins.count %>
+<div class="container">
+  <% @cabins.each do |cabin| %>
+    <div class="card" style= "border: 1px solid black, margin: 50px">
+     <h3><%= cabin.name %></h3>
+     <h4><%= cabin.location %></h4>
+    </div>
+  <% end %>
+</div>
