@@ -3,12 +3,12 @@
 <br>
 <br>
 <br>
-<p class="bookings-list">
+<div class="card" style= "border: 1px solid black, margin: 50px">
   <% @bookings.each do |booking| %>
   <%= booking.user_id %>
   <%= booking.cabin_id %>
   <%= booking.start_date %>
   <%= booking.end_date %>
   <% end %>
-</p>
+</div>
 
