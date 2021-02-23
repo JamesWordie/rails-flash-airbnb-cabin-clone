@@ -1,0 +1,11 @@
+<% @cabins.each do |cabin| %>
+  <div class="card">
+    <div class="card-cities">
+      <img src="https://source.unsplash.com/random?cabin" class="card-img-top" alt="log cabin">
+      <div class="card-body">
+        <h4> <%= cabin.name %> </h4>
+        <p class="card-text"><%= cabin.location %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
