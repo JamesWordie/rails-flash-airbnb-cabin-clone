@@ -1,6 +1,7 @@
-<br>
-<br>
-<br>
-hello
-
-<%= @cabins.count %>
+<div class="container">
+<% @cabins.each do |cabin| %>
+  <div class="cabin-container">
+    <h3><%= link_to cabin.name, cabin_show_path(cabin) %></h3>
+  </div>
+<% end %>
+</div>
