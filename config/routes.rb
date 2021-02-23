@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, except: [:new, :create, :index]
-  get ‘profile’, to: 'pages#profile'
+  get 'profile', to: 'pages#profile'
 end
 
 
