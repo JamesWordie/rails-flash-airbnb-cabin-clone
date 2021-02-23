@@ -1,1 +1,35 @@
-// Specific CSS for your home-page
+h2  {
+  text-align: center;
+}
+
+.coutries-card {
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+}
+
+.coutries-container{
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  text-align: center;
+  border-radius: 10px;
+  width: 80vw;
+}
+
+.cabins-container{
+  margin: 40px auto;
+  display: grid;
+  width: 80vw;
+  background-color: black;
+  border-radius: 10px;
+    text-align: center;
+
+}
+
+.cabins-container > h2 {
+  margin-top: 40px;
+  color:white;
+}
+

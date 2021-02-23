@@ -9,22 +9,19 @@
 	align-content: space-between;
 	padding-left: 40px;
 	padding-right: 40px;
-	z-index: 98;
+	z-index: 97;
 }
 
 .navbar-logo {
-	display: flex;
-	z-index: 99;
+	z-index: 98;
 }
 
 .navbar-search-bar {
 	width: 45%;
-	display: flex;
-	z-index: 99;
+	z-index: 98;
 }
 
-.navbar-account-login {
-	display: flex;
-	z-index: 99;
+.navbar-login {
+	z-index: 98;
 }
 

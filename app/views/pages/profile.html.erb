@@ -6,15 +6,24 @@ if owner = true
   loop through cabins.each
   dipslay all cabins where cabin.user = current_user
   show details of cabin, link to update/destroy
+  current user info -->
 
+<span><%= link_to 'Add a New Cabin', new_cabin_path %> </span>
 
-current user info -->
 <div class="container">
   <div class="cards">
     <% current_user.cabins do |cabin| %>
     <div class="card-cabin">
       <h2><%= cabin.name %> </h2>
+      
       <p><%= cabin.description %> </p>
+    
+      
+      
+
+      <%= link_to 'Edit', edit_cabin_path(cabin)  %>
+      <%= link_to 'Delete', cabin_path(cabin), method: :delete  %>
+    
     </div>
     <% end %>
   </div>
@@ -23,7 +32,10 @@ current user info -->
       <% current_user.bookings do |booking| %>
         <li>
           <%= booking %>
-          <%#= booking.start_date %> - <%= booking.end_date %>
+
+          <%= link_to 'Edit Booking', booking_path(booking) %>
+          <%= link_to 'Delete Booking', booking_path(booking) %>
+
         </li>
       <% end %>
     </ul>
