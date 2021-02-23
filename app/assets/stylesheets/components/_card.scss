@@ -5,17 +5,20 @@
   justify-content: start;
   align-items: center;
   flex-direction:column;
-  color: white;
+  // color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   a {
-    color: white;
+    color: black;
   }
-   &:hover {
-    color: white;
+  &:hover {
+    color: black;
     text-decoration: none;
     opacity: 1;
+  }
+  i{
+    color: black;
   }
 }
 
@@ -25,6 +28,7 @@
 }
 
 .card-cities {
+  color: black;
   display: inline-flex;
   img {
     width: 35%;
