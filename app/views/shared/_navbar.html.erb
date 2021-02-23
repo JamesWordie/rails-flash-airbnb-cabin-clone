@@ -16,11 +16,13 @@
 	</div>
 	<div class="dropdown">
 		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			Account
+			Actions
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			<a class="dropdown-item" href="#">Login</a>
-			<a class="dropdown-item" href="#">Signup</a>
+			<a class="dropdown-item" href="#"> <%= link_to "Login", new_user_session_path, class: "btn" %> </a>
+			<a class="dropdown-item" href="#"> <%= link_to "Sign up", new_user_registration_path, class: "btn" %> </a>
+			<a class="dropdown-item" href="#"> <%= link_to "Profile", user_session_path, class: "btn" %> </a>
+			<a class="dropdown-item" href="#"> <%= link_to "All Cabins", list_of_cabins_path, class: "btn" %> </a>
 		</div>
 	</div>
 </div>
