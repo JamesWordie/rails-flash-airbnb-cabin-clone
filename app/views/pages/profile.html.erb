@@ -8,28 +8,34 @@ if owner = true
   show details of cabin, link to update/destroy
   current user info -->
 
-<span><%= link_to 'Add a New Cabin', new_cabin_path %> </span>
-<h1> <%= current_user.cabins.count %> </h1>
-<div class="container">
-  <div class="cards">
-    <% current_user.cabins.each do |cabin| %>
-    <div class="card-cabin">
-      <h2><%= cabin.name %> </h2>
-      <p><%= cabin.description %> </p>
-      <%= link_to 'Edit', edit_cabin_path(cabin)  %>
-      <%= link_to 'Delete', cabin_path(cabin), method: :delete  %>
+  <span><%= link_to 'Add a New Cabin', new_cabin_path %> </span>
+  <div class="container">
+    <div class="row">
+      <div class="cards">
+        <% current_user.cabins.each do |cabin| %>
+        <div class="card-profile">
+          <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+          <h2><%= cabin.name %> </h2>
+          <p><%= cabin.description %> </p>
+          <span>
+          <%= link_to 'Edit', edit_cabin_path(cabin), class: "btn btn-primary" %>
+          <%= link_to 'Delete', cabin_path(cabin), method: :delete, class: "btn btn-primary" %>
+          </span>
+        </div>
+        <% end %>
+      </div>
     </div>
-    <% end %>
-  </div>
-  <div class="card-booking">
-    <ul>
-      <% current_user.bookings.each do |booking| %>
-        <li>
-          <%= booking %>
-          <%= link_to 'Edit Booking', booking_path(booking) %>
-          <%= link_to 'Delete Booking', booking_path(booking) %>
-        </li>
+    <div class="row">
+      <div class="cards">
+        <% current_user.bookings.each do |booking| %>
+        <div class="card-profile">
+          <h5>From:<%= booking.start_date %></h5>-<h5>To:<%= booking.end_date %></h5>
+          <span>
+          <%= link_to 'Edit Booking', booking_path(booking), class: "btn btn-primary" %>
+          <%= link_to 'Delete Booking', booking_path(booking), method: :delete, class: "btn btn-primary" %>
+          </span>
+        </div>
       <% end %>
-    </ul>
+    </div>
   </div>
 </div>
