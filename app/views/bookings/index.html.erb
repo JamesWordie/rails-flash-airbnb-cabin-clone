@@ -3,12 +3,14 @@
 <br>
 <br>
 <br>
-<div class="card" style= "border: 1px solid black, margin: 50px">
+<div class="container">
   <% @bookings.each do |booking| %>
-  <%= booking.user_id %>
-  <%= booking.cabin_id %>
-  <%= booking.start_date %>
-  <%= booking.end_date %>
+    <div class="card" style= "border: 1px solid black, margin: 50px">
+      <%= booking.user_id %>
+      <%= booking.cabin_id %>
+      <%= booking.start_date %>
+      <%= booking.end_date %>
+    </div>
   <% end %>
 </div>
 
