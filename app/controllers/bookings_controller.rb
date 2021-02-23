@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
   end
-
+  
   def create
     @booking = Booking.new(strong_params)
     @booking.user = current_user
@@ -16,11 +16,17 @@ class BookingsController < ApplicationController
       render 'cabins/show'
     end
   end
+  
+  def delete
+    @booking = Booking.find(params:[id])
+    @booking.destroy
+
+    redirect_to booking_path
+  end
 
   private
 
   def strong_params
     params.require(:booking).permit(:start_date, :end_date)
   end
-
 end
