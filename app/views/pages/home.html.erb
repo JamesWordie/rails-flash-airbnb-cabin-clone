@@ -1,60 +1,24 @@
+<!-- Banner -->
 <div class="banner">
   <div class="content">
-  <h1>Cabin-Bnb</h1>
+    <h1>Cabin-Bnb</h1>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="cards">
-        <% 6.times do %>
-        <%# render 'local-cities' %>
-        <div class="card">
-          <div class="card-cities">
-          <img src="https://images.pexels.com/photos/890035/pexels-photo-890035.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" class="card-img-top" alt="log cabin">
-          <div class="card-body">
-            <h4>City Name</h4>
-            <p class="card-text">A remote cabin in the woods</p>
-          </div>
-        </div>
-        </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
+
+<!-- Countries -->
+<div class="coutries-container">
+  <%= render 'countries' %>
 </div>
-<div style="background-color:black;">
+
+<!-- Cabins -->
+<div class="cabins-container">
+  <h2>Cabins</h2>
   <div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="cards">
-        <% 6.times do %>
-        <%# render 'local-cities' %>
-        <div class="card">
-          <img src="https://images.pexels.com/photos/428427/pexels-photo-428427.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" class="card-img-top" alt="log cabin">
-          <div class="card-body">
-            <h4>Experiences</h4>
-            <p class="card-text">Some new experinece to do.</p>
-          </div>
+    <div class="row">
+      <div class="col">
+        <div class="cards">
+          <%= render 'cabin-cards' %>
         </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="cards">
-        <% 6.times do %>
-        <%# render 'local-cities' %>
-        <div class="card-host">
-          <img src="https://images.pexels.com/photos/789382/pexels-photo-789382.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" class="card-img-top" alt="log cabin">
-          <div class="card-body">
-            <h4>Host Details</h4>          </div>
-        </div>
-        <% end %>
       </div>
     </div>
   </div>
