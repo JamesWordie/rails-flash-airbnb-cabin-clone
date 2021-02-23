@@ -9,7 +9,7 @@ if owner = true
   current user info -->
 
 <span><%= link_to 'Add a New Cabin', new_cabin_path %> </span>
-
+<h1> <%= current_user.cabins.count %> </h1>
 <div class="container">
   <div class="cards">
     <% current_user.cabins do |cabin| %>
