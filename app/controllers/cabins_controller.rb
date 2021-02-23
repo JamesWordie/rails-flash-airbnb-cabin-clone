@@ -31,14 +31,14 @@ class CabinsController < ApplicationController
     @cabin = Cabin.find(params[:id])
     @cabin.update(strong_params)
 
-    redirect_to cabins_path
+    redirect_to profile_path
   end
 
   def destroy
     @cabin = Cabin.find(params[:id])
     @cabin.destroy
 
-    redirect_to cabins_path
+    redirect_to profile_path
   end
 
   private
