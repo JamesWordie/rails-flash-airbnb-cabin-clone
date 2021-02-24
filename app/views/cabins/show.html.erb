@@ -5,12 +5,13 @@
   <div class="row justify-content-center">
     <div class="cabin-headers text-center">
       <h1> <%=  @cabin.name  %> </h1>
-      <p> <%=  @cabin.description  %> </p>
+      <!-- <p> <%=  @cabin.description  %> </p> -->
+      <p>A cozy cabin perfect for quiet holidays away from the city</p>
 
-      <img class="cabin-image" src="https://images.pexels.com/photos/890035/pexels-photo-890035.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="">
+      <img class="cabin-image" src="https://images.unsplash.com/photo-1537197518227-a36efeafd477?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDl8fGNhYmlufGVufDB8fDB8&auto=format&fit=crop&w=700&q=60" alt="">
       <span class="cabin-show-text">
       <h5> Price per night: £<%=  @cabin.price_per_night  %> </h5>
-      <h5> Maximum number of guests:<%= @cabin.number_of_guests  %> </h5>
+      <h5> Maximum number of guests: <%= @cabin.number_of_guests  %> </h5>
       </span>
     </div>
   </div>

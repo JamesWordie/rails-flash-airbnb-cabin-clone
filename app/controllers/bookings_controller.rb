@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
 
     if @booking.valid?
       @booking.save
-      redirect_to cabins_path
+      redirect_to profile_path
     else
       render 'cabins/show'
     end
@@ -24,7 +24,6 @@ class BookingsController < ApplicationController
     redirect_to profile_path
   end
 
-
   def edit
     @booking = Booking.find(params[:id])
   end
@@ -34,7 +33,6 @@ class BookingsController < ApplicationController
     @booking.update(booking_params)
     redirect_to profile_path(@booking)
   end
-
 
   private
 
