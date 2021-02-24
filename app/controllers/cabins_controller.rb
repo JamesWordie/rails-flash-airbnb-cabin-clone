@@ -14,18 +14,12 @@ class CabinsController < ApplicationController
 
   def create
     @cabin = Cabin.new(strong_params)
-<<<<<<< HEAD
-
-    @cabin.save
-    redirect_to cabins_path
-=======
     @cabin.user = current_user
     if @cabin.save
       redirect_to profile_path
     else
       render 'new'
     end
->>>>>>> 789f6b065151f4e288b9d092cd2fb2d256e00b64
   end
 
   def edit
