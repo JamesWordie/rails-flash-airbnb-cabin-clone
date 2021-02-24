@@ -1,5 +1,4 @@
 class CabinsController < ApplicationController
-
   def index
     @cabins = Cabin.all
   end
@@ -15,27 +14,37 @@ class CabinsController < ApplicationController
 
   def create
     @cabin = Cabin.new(strong_params)
+<<<<<<< HEAD
 
     @cabin.save
     redirect_to cabins_path
+=======
+    @cabin.user = current_user
+    if @cabin.save
+      redirect_to profile_path
+    else
+      render 'new'
+    end
+>>>>>>> 789f6b065151f4e288b9d092cd2fb2d256e00b64
   end
 
   def edit
     @cabin = Cabin.find(params[:id])
+    redirect_to profile_path
   end
 
   def update
     @cabin = Cabin.find(params[:id])
     @cabin.update(strong_params)
 
-    redirect_to cabins_path
+    redirect_to profile_path
   end
 
   def destroy
     @cabin = Cabin.find(params[:id])
     @cabin.destroy
 
-    redirect_to cabins_path
+    redirect_to profile_path
   end
 
   private
@@ -43,5 +52,4 @@ class CabinsController < ApplicationController
   def strong_params
     params.require(:cabin).permit(:name, :description, :price_per_night, :number_of_guests, :location, :user)
   end
-
 end

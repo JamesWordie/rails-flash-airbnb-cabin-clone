@@ -3,11 +3,13 @@
     <h1>Here are some of our cabins:</h1>
     <div class="cards">
     <% @cabins.each do |cabin| %>
-    <div class="card" style= "border: 1px solid black, margin: 50px">
-     <h3><%= link_to cabin.name, cabin_path(cabin) %></h3>
-     <h4><%= cabin.location %></h4>
+    <div class="card" style= "blackborder: 1px solid black, margin: 50px">
+      <h3  style="text-color:black" ><%= link_to cabin.name, cabin_path(cabin) %></h3>
+      <i class="fas fa-users"></i><%= cabin.number_of_guests %>
+      <i class="fas fa-pound-sign"></i><%= cabin.price_per_night %>
+      <h4><%= cabin.location %></h4>
     </div>
-  <% end %>
+      <% end %>
     </div>
   </div>
 </div>
