@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
   end
-  
+
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
@@ -16,12 +16,12 @@ class BookingsController < ApplicationController
       render 'cabins/show'
     end
   end
-  
-  def delete
-    @booking = Booking.find(params:[id])
+
+  def destroy
+    @booking = Booking.find(params[:id])
     @booking.destroy
 
-    redirect_to booking_path
+    redirect_to profile_path
   end
 
 
@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to cabins_path
+    redirect_to profile_path(@booking)
   end
 
 
