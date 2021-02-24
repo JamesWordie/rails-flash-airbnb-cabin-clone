@@ -31,7 +31,7 @@ if owner = true
         <div class="card-profile">
           <h5>From:<%= booking.start_date %></h5>-<h5>To:<%= booking.end_date %></h5>
           <span>
-          <%= link_to 'Edit Booking', booking_path(booking), class: "btn btn-primary" %>
+          <%= link_to 'Edit Booking', edit_booking_path(booking), class: "btn btn-primary" %>
           <%= link_to 'Delete Booking', booking_path(booking), method: :delete, class: "btn btn-primary" %>
           </span>
         </div>

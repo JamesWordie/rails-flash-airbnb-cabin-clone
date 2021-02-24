@@ -24,7 +24,6 @@ class CabinsController < ApplicationController
 
   def edit
     @cabin = Cabin.find(params[:id])
-    redirect_to profile_path
   end
 
   def update
