@@ -123,9 +123,11 @@
   <h4><%= link_to @cabins[11].name, cabin_path(@cabins[11]) %></h4>
   <br>
   <br>
+  <div class="text-left">
     <i class="fas fa-users" style="color:white"><%= @cabins[11].number_of_guests %></i>
     <i class="fas fa-pound-sign" style="color:white"><%= @cabins[11].price_per_night %></i>
-  <h5 style="color:white"><%= @cabins[11].location %></h5>
+    </div>
+    <h5 style="color:white"><%= @cabins[11].location %></h5>
 </div>
 
 
@@ -226,37 +228,4 @@
     <i class="fas fa-pound-sign" style="color:white"><%= @cabins[20].price_per_night %></i>
   </div>
   <h5 style="color:white"><%= @cabins[20].location %></h5>
-</div>
-
-<div class="card-cabin-index" style="background-image: url('https://images.unsplash.com/photo-1605814058145-3d6ab7eddde1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxjYWJpbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60');">
-  <h4><%= link_to @cabins[21].name, cabin_path(@cabins[21]) %></h4>
-  <br>
-  <br>
-  <div class="text-left">
-    <i class="fas fa-users" style="color:white"><%= @cabins[21].number_of_guests %></i>
-    <i class="fas fa-pound-sign" style="color:white"><%= @cabins[21].price_per_night %></i>
-  </div>
-  <h5 style="color:white"><%= @cabins[21].location %></h5>
-</div>
-
-<div class="card-cabin-index" style="background-image: url('https://images.unsplash.com/photo-1595185584335-a6c1cd098b2f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjgzfHxjYWJpbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60');">
-  <h4><%= link_to @cabins[22].name, cabin_path(@cabins[22]) %></h4>
-  <br>
-  <br>
-  <div class="text-left">
-    <i class="fas fa-users" style="color:white"><%= @cabins[22].number_of_guests %></i>
-    <i class="fas fa-pound-sign" style="color:white"><%= @cabins[22].price_per_night %></i>
-  </div>
-  <h5 style="color:white"><%= @cabins[22].location %></h5>
-</div>
-
-<div class="card-cabin-index" style="background-image: url('https://images.unsplash.com/photo-1574163816758-7e4889088488?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjg5fHxjYWJpbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60');">
-  <h4><%= link_to @cabins[23].name, cabin_path(@cabins[23]) %></h4>
-  <br>
-  <br>
-  <div class="text-left">
-    <i class="fas fa-users" style="color:white"><%= @cabins[23].number_of_guests %></i>
-    <i class="fas fa-pound-sign" style="color:white"><%= @cabins[23].price_per_night %></i>
-  </div>
-  <h5 style="color:white"><%= @cabins[23].location %></h5>
 </div>
