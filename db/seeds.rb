@@ -17,7 +17,7 @@ puts "Seeding database..."
   user.save!
   puts "Saving user"
 
-  1.upto(4).to_a.sample.times do
+  (1..4).to_a.sample.times do
     cabin = Cabin.new(
     user_id: user.id,
     name: Faker::Address.community,
@@ -42,3 +42,6 @@ puts "Seeding database..."
   puts "Saving booking"
   end
 end
+
+
+

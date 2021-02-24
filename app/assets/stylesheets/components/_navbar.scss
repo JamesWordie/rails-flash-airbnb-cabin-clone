@@ -6,7 +6,7 @@
 	height: 80px;
 	background-color: #FFFFFF;
 	display: flex;
-	align-content: space-between;
+	align-content: space-around !important;
 	padding-left: 40px;
 	padding-right: 40px;
 	z-index: 97;
@@ -19,9 +19,12 @@
 .navbar-search-bar {
 	width: 45%;
 	z-index: 98;
+  margin: 0 10px;
 }
 
 .navbar-login {
 	z-index: 98;
 }
+
+
 

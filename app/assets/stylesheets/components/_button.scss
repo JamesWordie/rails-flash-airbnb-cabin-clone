@@ -1,0 +1,25 @@
+.btn-booking {
+  background-color: #659B5E;
+  color: #659B5E;
+}
+
+.back-link {
+  font-size: 20px;
+  color: $forgreen;
+  opacity:0.4;
+  font-family:  $all-font;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.8;
+    color: $forgreen;
+  }
+}
+
+.container > .back-link {
+    margin-top: 20px;
+  }
+.btn {
+  color: #659B5E;
+  box-shadow: 0 0 2px;
+}
