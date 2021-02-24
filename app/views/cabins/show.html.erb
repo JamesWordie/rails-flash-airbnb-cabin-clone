@@ -22,7 +22,9 @@
         <%= simple_form_for [@cabin, @booking] do |f| %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
+        <%= f.input :status, collection: Booking::STATUSOPTIONS, default:"pending"%>
         <%= f.submit "Make booking", class: "btn btn-primary" %>
+
         <% end %>
       </div>
     </div>
