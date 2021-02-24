@@ -21,7 +21,7 @@ puts "Seeding database..."
     cabin = Cabin.new(
     user_id: user.id,
     name: Faker::Address.community,
-    description: "Really nice",
+    description: "A remote cabin out in the idyllic countryside.",
     price_per_night: 50.upto(100).to_a.sample,
     number_of_guests: 2.upto(8).to_a.sample,
     location: Faker::Nation.capital_city
