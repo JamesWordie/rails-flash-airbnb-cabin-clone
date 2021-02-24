@@ -1,11 +1,14 @@
+body{
+  background-color: #F4F3EE;
+}
+
 h2  {
   text-align: center;
 }
 
-.coutries-card {
-  height: 20px;
-  width: 20px;
+.countries-card {
   border-radius: 10px;
+  border: 2px solid #659B5E !important;
 }
 
 .coutries-container{
@@ -19,12 +22,12 @@ h2  {
 }
 
 .cabins-container{
-  margin: 40px auto;
+  margin: 60px auto;
   display: grid;
   width: 80vw;
-  background-color: black;
+  background-color: #659B5E;
   border-radius: 10px;
-    text-align: center;
+  text-align: center;
 
 }
 
@@ -33,6 +36,13 @@ h2  {
   color:white;
 }
 
+.card-cities{
+  display:flex;
+}
+
+.card-cities > img {
+  height: 120px;
+  
 .container {
   padding: 20px;
 }
