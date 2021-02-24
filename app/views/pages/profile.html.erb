@@ -10,6 +10,9 @@ if owner = true
 
   <span><%= link_to 'Add a New Cabin', new_cabin_path %> </span>
   <div class="container">
+    <% if !current_user.cabins.empty? %>
+    <p class="header">Your Cabins</p>
+    <% end %>
     <div class="row">
       <div class="cards">
         <% current_user.cabins.each do |cabin| %>
@@ -25,6 +28,12 @@ if owner = true
         <% end %>
       </div>
     </div>
+    <% if !current_user.bookings.empty? %>
+    <p class="header">Your bookings</p>
+    <% else %>
+    <p id="add-booking-text">Looks like you got no bookings... Lets change that!</p>
+    <%= link_to 'Make a booking', cabins_path, class: "btn btn-primary" %>
+    <% end %>
     <div class="row">
       <div class="cards">
         <% current_user.bookings.each do |booking| %>
