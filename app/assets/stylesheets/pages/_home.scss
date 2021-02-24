@@ -3,7 +3,9 @@ body{
 }
 
 h2  {
+  margin-top: 30px !important;
   text-align: center;
+  color: #66462C;
 }
 
 .countries-card {
@@ -22,11 +24,11 @@ h2  {
 }
 
 .cabins-container{
-  margin: 60px auto;
+  margin: 40px auto;
   display: grid;
-  width: 80vw;
+  width: 100vw;
   background-color: #659B5E;
-  border-radius: 10px;
+  border-radius: 0px;
   text-align: center;
 
 }
