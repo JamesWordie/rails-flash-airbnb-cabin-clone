@@ -86,6 +86,30 @@
   grid-gap: 16px;
 }
 
+.card-cabin-index {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction:column;
+  // color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  a {
+    color: white;
+  }
+  &:hover {
+    color: white;
+    text-decoration: none;
+    opacity: 1;
+  }
+  i{
+    color: white;
+  }
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
