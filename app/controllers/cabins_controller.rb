@@ -15,10 +15,9 @@ class CabinsController < ApplicationController
 
   def create
     @cabin = Cabin.new(strong_params)
-    @cabin.valid?
-    raise
+
     @cabin.save
-    redirect_to list_of_cabins_path
+    redirect_to cabins_path
   end
 
   def edit
