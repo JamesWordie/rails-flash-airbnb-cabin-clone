@@ -30,6 +30,35 @@ if owner = true
             <span>
               <%= link_to 'Edit', edit_cabin_path(cabin), class: "btn" %>
               <%= link_to 'Delete', cabin_path(cabin), method: :delete, class: "btn" %>
+              <% if !cabin.bookings.empty? %>
+                <h2> Bookings </h2>
+              <% else %>
+                <h2>No current bookings</h2>
+              <% end %>
+              <% cabin.bookings.each do |booking| %>
+              <p><%=  booking.start_date %> - <%=  booking.end_date %></p>
+              <div class="booking-status">
+                <% if booking.status == "f" %>
+                  <p>status: pending</p>
+                <% else %>
+                  <p>status:accepted </p>
+                <%end%>
+                <% if booking.status != "t" %>
+                <%= simple_form_for [booking] do |f| %>
+                <%= f.input :status, as: :boolean, selected: false, label: "accept" %>
+
+
+                <%= f.submit "Accept booking", class: "btn btn-primary" %>
+
+                <% end %>
+                <% end %>
+                <%= link_to 'Delete Booking', booking_path(booking), method: :delete, class: "btn" %>
+              </div>
+
+              <div class="confirmed-bookings">
+
+              </div>
+              <% end %>
             </span>
           </div>
         <% end %>
@@ -43,7 +72,6 @@ if owner = true
           <div class="card-profile">
             <h5>From:<%= booking.start_date %></h5>-<h5>To:<%= booking.end_date %></h5>
             <span>
-              <%= link_to booking.status,  %>
 
               <%= link_to 'Edit Booking', edit_booking_path(booking), class: "btn" %>
               <%= link_to 'Delete Booking', booking_path(booking), method: :delete, class: "btn" %>

@@ -9,13 +9,12 @@
   }
 
   .cards-container{
-    display: flex;
-    flex-wrap: wrap;
+    margin: 0px !important;
+    margin: auto;
   }
 
   .card-profile{
-    width: 200px;
-    margin: 20px;
+    width: 80%;
   }
   .header{
     text-align: center;
