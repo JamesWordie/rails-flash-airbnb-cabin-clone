@@ -174,8 +174,8 @@ end
 
 user = User.new(
     first_name: "Per",
-    last_name: "Jenson",
-    email: "per.jenson@me.com",
+    last_name: "Jensen",
+    email: "per.jensen@me.com",
     password: "123456"
   )
 user.save!
