@@ -1,8 +1,15 @@
-<h1>What did you think? </h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h1>What did you think? </h1>
 
-<%= simple_form_for [ @booking, @review ] do |f| %>
-    <%= f.input :content, placeholder: 'Your review' %>
-    <%= f.input :rating, collection: 0..5 %>
-    <%= f.submit "Leave Review", class: "btn btn-primary" %>
-<% end %>
+      <%= simple_form_for [ @booking, @review ] do |f| %>
+      <%= f.input :content, placeholder: 'Your review' %>
+      <%= f.input :rating, collection: 0..5 %>
+      <%= f.submit "Leave Review", class: "btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 
