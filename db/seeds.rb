@@ -122,7 +122,7 @@ name: Faker::Address.community,
 description: "A remote cabin out in the idyllic countryside.",
 price_per_night: 50.upto(100).to_a.sample,
 number_of_guests: 2.upto(8).to_a.sample,
-location: "Selkirk, Scottish Borders, Scotland"
+location: "Selkirk, Scotland"
 )
 file = URI.open('https://res.cloudinary.com/arenatofte/image/upload/v1614250515/Cabin-Bnb/photo-1520984032042-162d526883e0_j6rwbx.jpg')
 cabin.photo.attach(io: file, filename: 'cabin.jpg', content_type: 'image/jpg')
@@ -211,7 +211,7 @@ name: Faker::Address.community,
 description: "A remote cabin out in the idyllic countryside.",
 price_per_night: 50.upto(100).to_a.sample,
 number_of_guests: 2.upto(8).to_a.sample,
-location: "Kirkby Stephen, Cumbria, England"
+location: "Kirkby Stephen, England"
 )
 file = URI.open('https://res.cloudinary.com/arenatofte/image/upload/v1614250190/Cabin-Bnb/photo-1551649123-4c2d37b7fed2_fggqsk.jpg')
 cabin.photo.attach(io: file, filename: 'cabin.jpg', content_type: 'image/jpg')
@@ -224,7 +224,7 @@ name: Faker::Address.community,
 description: "A remote cabin out in the idyllic countryside.",
 price_per_night: 50.upto(100).to_a.sample,
 number_of_guests: 2.upto(8).to_a.sample,
-location: "Halesworth, Suffolk, East Anglia"
+location: "Halesworth, East Anglia"
 )
 file = URI.open('https://res.cloudinary.com/arenatofte/image/upload/v1614250102/Cabin-Bnb/photo-1571977547180-de7d159f7104_w5ui3l.jpg')
 cabin.photo.attach(io: file, filename: 'cabin.jpg', content_type: 'image/jpg')
@@ -237,7 +237,7 @@ name: Faker::Address.community,
 description: "A remote cabin out in the idyllic countryside.",
 price_per_night: 50.upto(100).to_a.sample,
 number_of_guests: 2.upto(8).to_a.sample,
-location: "Bury St.Edmunds, Suffolk, England"
+location: "Bury St.Edmunds, England"
 )
 file = URI.open('https://res.cloudinary.com/arenatofte/image/upload/v1614250072/Cabin-Bnb/photo-1475087542963-13ab5e611954_pnwsy0.jpg')
 cabin.photo.attach(io: file, filename: 'cabin.jpg', content_type: 'image/jpg')
@@ -250,7 +250,7 @@ name: Faker::Address.community,
 description: "A remote cabin out in the idyllic countryside.",
 price_per_night: 50.upto(100).to_a.sample,
 number_of_guests: 2.upto(8).to_a.sample,
-location: "Ribble Valley, Lancashire, England"
+location: "Ribble Valley, England"
 )
 file = URI.open('https://res.cloudinary.com/arenatofte/image/upload/v1614250012/Cabin-Bnb/photo-1499696010180-025ef6e1a8f9_ok6g9i.jpg')
 cabin.photo.attach(io: file, filename: 'cabin.jpg', content_type: 'image/jpg')
@@ -298,7 +298,7 @@ name: Faker::Address.community,
 description: "A remote cabin out in the idyllic countryside.",
 price_per_night: 50.upto(100).to_a.sample,
 number_of_guests: 2.upto(8).to_a.sample,
-location: "Wadebridge, Cornwall, England"
+location: "Wadebridge, England"
 )
 file = URI.open('https://res.cloudinary.com/arenatofte/image/upload/v1614249966/Cabin-Bnb/photo-1542314820-e04ce1d3d81a_bhbxzy.jpg')
 cabin.photo.attach(io: file, filename: 'cabin.jpg', content_type: 'image/jpg')
@@ -311,7 +311,7 @@ name: Faker::Address.community,
 description: "A remote cabin out in the idyllic countryside.",
 price_per_night: 50.upto(100).to_a.sample,
 number_of_guests: 2.upto(8).to_a.sample,
-location: "Oban, Argyll & Bute, Highlands"
+location: "Argyll & Bute, Highlands"
 )
 file = URI.open('https://res.cloudinary.com/arenatofte/image/upload/v1614249921/Cabin-Bnb/photo-1596999271637-45d1accb9897_hqztpv.jpg')
 cabin.photo.attach(io: file, filename: 'cabin.jpg', content_type: 'image/jpg')
@@ -324,7 +324,7 @@ name: Faker::Address.community,
 description: "A remote cabin out in the idyllic countryside.",
 price_per_night: 50.upto(100).to_a.sample,
 number_of_guests: 2.upto(8).to_a.sample,
-location: "Hemingfod, Cambridgeshire, England"
+location: "Hemingford, England"
 )
 file = URI.open('https://res.cloudinary.com/arenatofte/image/upload/v1614249860/Cabin-Bnb/photo-1544103200-878e7cca8c91_gw0nfl.jpg')
 cabin.photo.attach(io: file, filename: 'cabin.jpg', content_type: 'image/jpg')
