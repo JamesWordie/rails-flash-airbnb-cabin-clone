@@ -1,0 +1,62 @@
+.content-show {
+  display: flex;
+  border-bottom: 2px solid lightgrey;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  .content-details {
+    width: 55%;
+  }
+  .content-booking {
+    width: 40%;
+    padding-left:100px;
+  }
+}
+
+.cabin-show-text {
+  text-align: left;
+  box-shadow: 1px 1px 4px lightgrey;
+  padding: 20px 20px 20px 5px;
+  border-radius: 10px;
+}
+
+.booking-form {
+  box-shadow: 1px 1px 4px lightgrey;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .content-show {
+  flex-direction: column;
+  justify-content: center;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .content-show {
+  flex-direction: column;
+  justify-content: center;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .content-show {
+  flex-direction: column;
+  justify-content: center;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .content-show {
+    flex-direction: row;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .content-show {
+    flex-direction: row;
+  }
+}

@@ -1,18 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "cabins";
+@import "show";
+@import "profile";
 
 body {
   font-family: 'Poppins', sans-serif !important;
-  background-color: #F4F3EE !important;
+  background-color: white !important;
   // height: 80vh !important;
 }
 
-@import "profile";
-
-
 .container {
-    min-height: calc(100vh);
+    min-height: calc(85vh);
   }
 
 
