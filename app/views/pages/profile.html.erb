@@ -29,38 +29,39 @@ if owner = true
           <div class="card-profile">
 
             <% if cabin.photo.attached? %>
-              <%= cl_image_tag cabin.photo.key, alt: "alttext" %>
+            <%= cl_image_tag cabin.photo.key, alt: "alttext" %>
             <% else %>
-              <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+            <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
             <% end %>
-          
+
             <h2><%= cabin.name %> </h2>
             <p><%= cabin.description %> </p>
             <span>
               <%= link_to 'Edit', edit_cabin_path(cabin), class: "btn" %>
               <%= link_to 'Delete', cabin_path(cabin), method: :delete, class: "btn" %>
               <% if !cabin.bookings.empty? %>
-                <h2> Bookings </h2>
+              <h2> Bookings </h2>
               <% else %>
-                <h2>No current bookings</h2>
+              <p class="pt-3">No current bookings</p>
               <% end %>
+
               <% cabin.bookings.each do |booking| %>
               <p><%=  booking.start_date %> - <%=  booking.end_date %></p>
+
               <div class="booking-status">
-                <% if booking.status == "f" %>
+                <% if booking.status == false %>
                   <p>status: pending</p>
                 <% else %>
                   <p>status:accepted </p>
                 <%end%>
-                <% if booking.status != "t" %>
-                <%= simple_form_for [booking] do |f| %>
-                <%= f.input :status, as: :boolean, selected: false, label: "accept" %>
 
-
-                <%= f.submit "Accept booking", class: "btn btn-primary" %>
-
+                <% if booking.status != true %>
+                  <%= simple_form_for [booking] do |f| %>
+                    <%= f.input :status, as: :boolean, selected: false, label: "accept" %>
+                    <%= f.submit "Accept booking", class: "btn" %>
+                  <% end %>
                 <% end %>
-                <% end %>
+
                 <%= link_to 'Delete Booking', booking_path(booking), method: :delete, class: "btn" %>
               </div>
 
