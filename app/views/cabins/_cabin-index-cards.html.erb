@@ -1,6 +1,7 @@
 <% @cabins.each do |cabin| %>
+  <%= link_to cabin_path(cabin) do %>
   <div class="card-cabin-index" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url( <%= cl_image_path cabin.photo.key %> );">
-    <h4><%= link_to cabin.name, cabin_path(cabin) %></h4>
+    <h4> <%= cabin.name %> </h4>
     <br>
     <br>
     <div class="text-left">
@@ -8,5 +9,6 @@
      <i class="fas fa-pound-sign" style="color:white"> <%= cabin.price_per_night %></i>
     </div>
     <h5 style="color:white"><%= cabin.location %></h5>
-  </div>
+  </div> 
+  <% end %>
 <% end %>
