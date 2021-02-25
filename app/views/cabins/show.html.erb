@@ -8,7 +8,7 @@
       <p> <%=  @cabin.description  %> </p>
 
 
-      <img class="cabin-image" src="https://images.unsplash.com/photo-1537197518227-a36efeafd477?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDl8fGNhYmlufGVufDB8fDB8&auto=format&fit=crop&w=700&q=60" alt="">
+      <img class="cabin-image" src= <%= cl_image_path @cabin.photo.key %> alt="">
       <span class="cabin-show-text">
         <h5> Price per night: £<%=  @cabin.price_per_night  %> </h5>
         <h5> Maximum number of guests: <%= @cabin.number_of_guests  %> </h5>
