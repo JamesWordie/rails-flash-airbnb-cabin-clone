@@ -7,7 +7,7 @@
       <%= f.input :price_per_night %>
       <%= f.input :number_of_guests %>
       <%= f.input :location %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.input :photo, as: :file %>
 
       <%= f.submit "Create Cabin", class: "btn btn-primary" %>
       <% end %>
