@@ -42,15 +42,4 @@
   </div>
   <% end %>
 
-<!-- Form for new booking -->
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <%= simple_form_for [@cabin, @booking] do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.submit "Make booking", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
-</div>
+
