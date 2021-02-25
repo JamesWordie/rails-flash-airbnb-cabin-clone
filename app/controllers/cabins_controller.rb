@@ -54,6 +54,6 @@ class CabinsController < ApplicationController
   private
 
   def strong_params
-    params.require(:cabin).permit(:name, :description, :price_per_night, :number_of_guests, :location, :user)
+    params.require(:cabin).permit(:name, :description, :price_per_night, :number_of_guests, :location, :user, :photo)
   end
 end
