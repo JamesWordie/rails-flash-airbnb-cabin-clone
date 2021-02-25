@@ -30,14 +30,14 @@ const initMapbox = () => {
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
-    // debugger
+    debugger
     markers.forEach((marker) => {
       new mapboxgl.Marker()
                   .setLngLat([ marker.lng, marker.lat ])
                   .addTo(map);
     });
     fitMapToMarkers(map, markers);
-    addMarkersToMap(map,markers);
+    addMarkersToMap(map, markers);
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
                                         mapboxgl: mapboxgl }));
   }
