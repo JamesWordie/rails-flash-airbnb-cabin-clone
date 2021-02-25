@@ -1,22 +1,24 @@
 <div class="container">
   <%= link_to cabins_path, class: 'back-link' do %>
-    <i class="fas fa-angle-double-left"></i> Cabins
+  <i class="fas fa-angle-double-left"></i> Cabins
   <% end %>
   <div class="row justify-content-center">
     <div class="cabin-headers text-center">
       <h1> <%=  @cabin.name  %> </h1>
       <p> <%=  @cabin.description  %> </p>
 
-      <img class="cabin-image" src="https://images.pexels.com/photos/890035/pexels-photo-890035.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="">
+
+      <img class="cabin-image" src= <%= cl_image_path @cabin.photo.key %> alt="">
       <span class="cabin-show-text">
-      <h5> Price per night: £<%=  @cabin.price_per_night  %> </h5>
-      <h5> Maximum number of guests:<%= @cabin.number_of_guests  %> </h5>
+        <h5> Price per night: £<%=  @cabin.price_per_night  %> </h5>
+        <h5> Maximum number of guests: <%= @cabin.number_of_guests  %> </h5>
       </span>
     </div>
   </div>
+</div>
 
   <!-- Form for new booking -->
-  <div class="container">
+  <div class="booking-form">
     <div class="row justify-content-center">
       <div class="col-6">
         <%= simple_form_for [@cabin, @booking] do |f| %>
@@ -29,5 +31,16 @@
     </div>
   </div>
 
+  <% if @cabin.reviews.count > 0 %>
+  <div class="reviews-container">
+    <h3>Here's what other people thought about <%=@cabin.name %>:</h3>
+    <% @cabin.reviews.each do |review| %>
+      <div class="review-card">
+        <h4> <%= "⭐️"*review.rating %> </h4>
+        <p><%= review.content %></p>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
 
 

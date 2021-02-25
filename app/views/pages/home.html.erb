@@ -2,17 +2,13 @@
 <div class="banner">
   <div class="content">
     <h1>Cabin-Bnb</h1>
+    <%= link_to "Book A Cabin", cabins_path, class: "btn" %>
   </div>
 </div>
 
-<!-- Countries -->
-<div class="coutries-container">
-    <%= render 'countries' %>
-</div>
-
 <!-- Cabins -->
+<h2>Top Rated Cabins</h2>
 <div class="cabins-container">
-  <h2>Cabins</h2>
   <div class="container">
     <div class="row">
       <div class="col">

@@ -1,12 +1,14 @@
 <div class="navbar">
 	<div class="navbar-logo">
-    <%= link_to "Login", new_user_session_path, class: "btn" %>
-    <%= link_to "Sign up", new_user_registration_path, class: "btn" %>
+    <% if !user_signed_in? %>
+      <%= link_to "Login", new_user_session_path, class: "btn" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn" %>
+    <% end %>
 <!-- 		<a class="navbar-brand" href="#">
 			<img src="https://images.pexels.com/photos/2083465/pexels-photo-2083465.jpeg?cs=srgb&dl=pexels-louis-2083465.jpg&fm=jpg" class="rounded" width="60" height="60" alt="">
 		</a> -->
 	</div>
-	<div class="navbar-search-bar me-3">
+<!-- 	<div class="navbar-search-bar me-3">
 		<div class="input-group">
 			<input class="form-control form-control-lg border-end-0 border border-dark rounded-pill rounded-end" type="text" value="Start your search" id="example-search-input" />
 			<span class="input-group-append">
@@ -15,19 +17,15 @@
 				</button>
 			</span>
 		</div>
-	</div>
+	</div> -->
 	<div class="dropdown">
-		<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			Actions
-		</button>
-		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			<a class="dropdown-item" href="#"> <%= link_to "Profile", profile_path, class: "btn" %> </a>
-			<a class="dropdown-item" href="#"> <%= link_to "All Cabins", cabins_path, class: "btn" %> </a>
-		</div>
+    <%= link_to 'Host Your Cabin', new_cabin_path, class: "btn"  %>
+      <% if user_signed_in? %>
+    <%= link_to "#{current_user.first_name}Profile", profile_path, class: "btn" %>
+  <% end %>
 	</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">

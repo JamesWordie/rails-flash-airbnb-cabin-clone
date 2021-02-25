@@ -1,7 +1,3 @@
-#profile-page{
-  .profile-buttons{
-    justify-items: center;
-  }
 
   .btn{
 
@@ -19,4 +15,8 @@
   .header{
     text-align: center;
   }
+.profile-details {
+  box-shadow: 0 0 2px $forgreen;
+  margin: 40px auto;
+  padding: 40px;
 }

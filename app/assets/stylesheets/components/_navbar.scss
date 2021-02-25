@@ -4,7 +4,7 @@
 	top: 0px;
 	width: 100%;
 	height: 80px;
-	background-color: #FFFFFF;
+	background-color: #66462C;opacity:0.8;
 	display: flex;
 	align-content: space-around !important;
 	padding-left: 40px;
@@ -26,5 +26,10 @@
 	z-index: 98;
 }
 
+.navbar-logo > .btn {
+  margin: 10px;
+}
 
-
+.dropdown > .btn {
+  margin: 10px;
+}
