@@ -1,6 +1,6 @@
 <div class="container">
   <%= link_to cabins_path, class: 'back-link' do %>
-    <i class="fas fa-angle-double-left"></i> Cabins
+  <i class="fas fa-angle-double-left"></i> Cabins
   <% end %>
   <div class="row justify-content-center">
     <div class="cabin-headers text-center">
@@ -10,24 +10,22 @@
 
       <img class="cabin-image" src="https://images.unsplash.com/photo-1537197518227-a36efeafd477?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDl8fGNhYmlufGVufDB8fDB8&auto=format&fit=crop&w=700&q=60" alt="">
       <span class="cabin-show-text">
-      <h5> Price per night: £<%=  @cabin.price_per_night  %> </h5>
-      <h5> Maximum number of guests: <%= @cabin.number_of_guests  %> </h5>
+        <h5> Price per night: £<%=  @cabin.price_per_night  %> </h5>
+        <h5> Maximum number of guests: <%= @cabin.number_of_guests  %> </h5>
       </span>
     </div>
   </div>
+</div>
 
-  <!-- Form for new booking -->
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-6">
-        <%= simple_form_for [@cabin, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.submit "Make booking", class: "btn btn-primary" %>
-        <% end %>
-      </div>
+<!-- Form for new booking -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <%= simple_form_for [@cabin, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.submit "Make booking", class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
-
-
-
+</div>

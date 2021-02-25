@@ -1,7 +1,8 @@
 class Cabin < ApplicationRecord
 
-belongs_to :user
-has_many :bookings
+	belongs_to :user
+	has_many :bookings
+	has_one_attached :photo
 
 # Validate presence and uniqueness for each field
 validates :name, presence: true
