@@ -17,6 +17,31 @@
   </div>
 </div>
 
+  <!-- Form for new booking -->
+  <div class="booking-form">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <%= simple_form_for [@cabin, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit "Make booking", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <% if @cabin.reviews.count > 0 %>
+  <div class="reviews-container">
+    <h3>Here's what other people thought about <%=@cabin.name %>:</h3>
+    <% @cabin.reviews.each do |review| %>
+      <div class="review-card">
+        <h4> <%= "⭐️"*review.rating %> </h4>
+        <p><%= review.content %></p>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+
 <!-- Form for new booking -->
 <div class="container">
   <div class="row justify-content-center">
