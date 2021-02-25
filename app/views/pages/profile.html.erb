@@ -50,6 +50,7 @@ if owner = true
             <span>
               <%= link_to 'Edit', edit_booking_path(booking), class: "btn" %>
               <%= link_to 'Delete', booking_path(booking), method: :delete, class: "btn" %>
+              <%= link_to 'Write a Review', new_booking_review_path(booking), class: "btn" %>
             </span>
           </div>
           <% end %>
