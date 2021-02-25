@@ -1,11 +1,12 @@
 <% @cabins.each do |cabin| %>
-  <div class="card-cabin-index" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url( <%= cl_image_path cabin.photo.key %> );">
-    <h4><%= link_to cabin.name, cabin_path(cabin) %></h4>
-    <br>
-    <br>
-    <div class="text-left">
-      <i class="fas fa-users" style="color:white"> <%= cabin.number_of_guests %></i>
-     <i class="fas fa-pound-sign" style="color:white"> <%= cabin.price_per_night %></i>
+  <%= link_to cabin_path(cabin), class: "no-dec-link" do %>
+    <div class="card-cabin-index" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url( <%= cl_image_path cabin.photo.key %> );">
+      <h4> <%= cabin.name %> </h4>
+      <div class="cabin-show-text" >
+        <i class="fas fa-users" style="color:white"> <%= cabin.number_of_guests %></i>
+        <i class="fas fa-pound-sign" style="color:white"> <%= cabin.price_per_night %></i>
+        <h5 style="color:white"><%= cabin.location %></h5>
+      </div> 
     </div>
     <p style="color:white"><%= cabin.location %></p>
   </div>

@@ -1,8 +1,5 @@
 .cabin-show-text {
-  text-align: left;
-  h5 {
-    margin-left: 10px;
-  }
+  text-align: center;
 }
 
 .card-cabin-index > .fas {
@@ -10,7 +7,21 @@
 }
 
 .card-cabin-index {
-  padding-top: 5px;
+  padding: 5px;
+  height: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.no-dec-link {
+  text-decoration: none !important;
+  color: white;
+  &:hover {
+  	text-decoration: none !important;
+  	color: white;
+  }	
 }
 
 .reviews-container{
