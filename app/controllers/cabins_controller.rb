@@ -1,6 +1,12 @@
 class CabinsController < ApplicationController
   def index
     @cabins = Cabin.all
+    @markers = @cabins.geocoded.map do |cabin|
+      {
+        lat: cabin.latitude,
+        long: cabin.longitude
+      }
+    end
   end
 
   def show
