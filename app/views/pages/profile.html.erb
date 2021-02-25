@@ -27,7 +27,13 @@ if owner = true
         <div class="cards">
           <% current_user.cabins.each do |cabin| %>
           <div class="card-profile">
-            <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+
+            <% if cabin.photo.attached? %>
+              <%= cl_image_tag cabin.photo.key, alt: "alttext" %>
+            <% else %>
+              <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+            <% end %>
+          
             <h2><%= cabin.name %> </h2>
             <p><%= cabin.description %> </p>
             <span>
