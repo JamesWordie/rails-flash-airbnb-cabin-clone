@@ -1,103 +1,88 @@
-<!-- link/form to update user
-
-loop through my bookings (current/past)??
-
-if owner = true
-  loop through cabins.each
-  dipslay all cabins where cabin.user = current_user
-  show details of cabin, link to update/destroy
-  current user info -->
-<div id="profile-page">
-  <div class="container">
-    <%= link_to cabins_path, class: 'back-link' do %>
-      <i class="fas fa-angle-double-left"></i> All Cabins
-    <% end %>
-    <div class="row justify-content-center">
-      <div class="profile-buttons">
-        <% if current_user.bookings.empty? %>
-          <%= link_to 'Make a booking', cabins_path, class: "btn" %>
-          <p id="add-booking-text">Looks like you've got no bookings... Lets change that!</p>
-        <% end %>
-        <% if current_user.cabins.empty? %>
-          <%= link_to 'Make a cabin', new_cabin_path, class: "btn" %>
-          <p id="add-cabin-text">Looks like you got no cabins on your profile... If you have a spare cabin you want to rent press here!</p>
-        <% end %>
-
-      </div>
+<div class="container">
+  <%= link_to cabins_path, class: 'back-link' do %>
+  <i class="fas fa-angle-double-left"></i> All Cabins
+  <% end %>
+  <div class="row justify-content-center">
+    <div class="profile-buttons">
+      <% if current_user.bookings.empty? %>
+      <%= link_to 'Make a booking', cabins_path, class: "btn" %>
+      <p id="add-booking-text">Looks like you've got no bookings... Lets change that!</p>
+      <% end %>
+      <% if current_user.cabins.empty? %>
+      <%= link_to 'Make a cabin', new_cabin_path, class: "btn" %>
+      <p id="add-cabin-text">Looks like you got no cabins on your profile... If you have a spare cabin you want to rent press here!</p>
+      <% end %>
     </div>
+  </div>
 
+  <div class="profile-details">
     <% if !current_user.cabins.empty? %>
-      <div class="profile-details">
-        <h4 class="header">Your Cabins:</h4>
-        <div class="cards">
-          <% current_user.cabins.each do |cabin| %>
+    <h4 class="header">Your Cabins:</h4>
+    <div class="cards">
+      <% current_user.cabins.each do |cabin| %>
 
-            <div class="card-profile">
+      <div class="card-profile">
 
-              <% if cabin.photo.attached? %>
-                <%= cl_image_tag cabin.photo.key, alt: "alttext" %>
-              <% else %>
-                <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
-              <% end %>
+        <% if cabin.photo.attached? %>
+        <%= cl_image_tag cabin.photo.key, alt: "alttext" %>
+        <% else %>
+        <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+        <% end %>
 
-              <h2><%= cabin.name %> </h2>
-              <p><%= cabin.description %> </p>
-              <span>
-                <%= link_to 'Edit', edit_cabin_path(cabin), class: "btn" %>
-                <%= link_to 'Delete', cabin_path(cabin), method: :delete, class: "btn" %>
-                <% if !cabin.bookings.empty? %>
-                  <h2> Bookings </h2>
-                <% else %>
-          
-                  <p class="pt-3">No current bookings</p>
-                <% end %>
-                <% cabin.bookings.each do |booking| %>
-                  <p><%=  booking.start_date %> - <%=  booking.end_date %></p>
-                    <div class="booking-status">
-                <% if booking.status == false %>
-                  <p>status: pending</p>
-                <% else %>
-                  <p>status:accepted </p>
-                <%end%>
+        <h2><%= cabin.name %> </h2>
+        <p><%= cabin.description %> </p>
+        <span>
+          <%= link_to 'Edit', edit_cabin_path(cabin), class: "btn" %>
+          <%= link_to 'Delete', cabin_path(cabin), method: :delete, class: "btn" %>
+          <% if !cabin.bookings.empty? %>
+          <h2> Bookings </h2>
+          <% else %>
 
-                <% if booking.status != true %>
-                  <%= simple_form_for [booking] do |f| %>
-                    <%= f.input :status, as: :boolean, selected: false, label: "accept" %>
-                    <%= f.submit "Accept booking", class: "btn" %>
-                  <% end %>
-                    <% end %>
-                    <%= link_to 'Delete Booking', booking_path(booking), method: :delete, class: "btn" %>
-                  </div>
-                <% end %>
-              </span>
-            </div>
+          <p class="pt-3">No current bookings</p>
           <% end %>
-        </div>
+          <% cabin.bookings.each do |booking| %>
+          <p><%=  booking.start_date %> - <%=  booking.end_date %></p>
+          <div class="booking-status">
+            <% if booking.status == false %>
+            <p>status: pending</p>
+            <% else %>
+            <p>status:accepted </p>
+            <%end%>
+
+            <% if booking.status != true %>
+            <%= simple_form_for [booking] do |f| %>
+            <%= f.input :status, as: :boolean, selected: false, label: "accept" %>
+            <%= f.submit "Accept booking", class: "btn" %>
+            <% end %>
+            <% end %>
+            <%= link_to 'Delete Booking', booking_path(booking), method: :delete, class: "btn" %>
+          </div>
+          <% end %>
+        </span>
       </div>
+      <% end %>
+    </div>
     <% end %>
+  </div>
 
 
-
+  <div class="profile-details">
     <% if !current_user.bookings.empty? %>
-      <div class="profile-details">
-        <h4 class="header">Your bookings:</h4>
-        <div class="cards">
-          <% current_user.bookings.each do |booking| %>
-
-          
-          <div class="card-profile">
-            <h5><%= link_to booking.cabin.name, cabin_path(booking.cabin) %> </h5>
-            <p><strong>From:</strong><%= booking.start_date.strftime("%B %d, %Y")%></p><p><strong>To: </strong><%= booking.end_date.strftime("%B %d, %Y") %></p>
-            <p>Total Cost: £<%= (booking.end_date - booking.start_date).to_i * booking.cabin.price_per_night %> </p>
-            <div class="profile-buttons">
-              <%= link_to 'Edit', edit_booking_path(booking), class: "btn" %>
-              <%= link_to 'Delete', booking_path(booking), method: :delete, class: "btn" %>
-              <%= link_to 'Write a Review', new_booking_review_path(booking), class: "btn" %>
-            </div>
-          <% end %>
+    <h4 class="header">Your bookings:</h4>
+    <div class="cards">
+      <% current_user.bookings.each do |booking| %>
+      <div class="card-profile">
+        <h5><%= link_to booking.cabin.name, cabin_path(booking.cabin) %> </h5>
+        <p><strong>From:</strong><%= booking.start_date.strftime("%B %d, %Y")%></p><p><strong>To: </strong><%= booking.end_date.strftime("%B %d, %Y") %></p>
+        <p>Total Cost: £<%= (booking.end_date - booking.start_date).to_i * booking.cabin.price_per_night %> </p>
+        <div class="profile-buttons">
+          <%= link_to 'Edit', edit_booking_path(booking), class: "btn" %>
+          <%= link_to 'Delete', booking_path(booking), method: :delete, class: "btn" %>
+          <%= link_to 'Write a Review', new_booking_review_path(booking), class: "btn" %>
         </div>
       </div>
+        <% end %>
+      </div>
     <% end %>
-
   </div>
 </div>
