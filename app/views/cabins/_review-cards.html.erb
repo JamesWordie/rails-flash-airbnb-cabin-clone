@@ -1,0 +1,5 @@
+<% @reviews.each do |review| %>
+  <div class="review-card"></div>
+    <h4> <%= "⭐️"*review.rating %> </h4>
+    <p><%= review.content %></p>
+<% end %>

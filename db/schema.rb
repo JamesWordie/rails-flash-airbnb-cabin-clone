@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_02_25_112639) do
 
   # These are extensions that must be enabled in order to support this database
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_02_25_112639) do
     t.bigint "cabin_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "status", default: false
     t.index ["cabin_id"], name: "index_bookings_on_cabin_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -63,7 +65,20 @@ ActiveRecord::Schema.define(version: 2021_02_25_112639) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_cabins_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "user_id", null: false
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -85,4 +100,6 @@ ActiveRecord::Schema.define(version: 2021_02_25_112639) do
   add_foreign_key "bookings", "cabins"
   add_foreign_key "bookings", "users"
   add_foreign_key "cabins", "users"
+  add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "users"
 end

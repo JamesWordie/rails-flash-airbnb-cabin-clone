@@ -1,11 +1,22 @@
 class CabinsController < ApplicationController
   def index
     @cabins = Cabin.all
+    @markers = @cabins.geocoded.map do |cabin|
+      {
+        lat: cabin.latitude,
+        lng: cabin.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { cabin: cabin })
+      }
+    end
   end
 
   def show
     @booking = Booking.new
     @cabin = Cabin.find(params[:id])
+    # @markers = [{
+    #   lat: @cabin.latitude,
+    #   long: @cabin.longitude
+    # }]
   end
 
   def new
