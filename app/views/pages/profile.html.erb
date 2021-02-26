@@ -18,6 +18,7 @@
   <div class="profile-details">
     <% if !current_user.cabins.empty? %>
     <h4 class="header" style="color:#659B5E">Your Cabins:</h4>
+    <br>
     <div class="cards">
       <% current_user.cabins.each do |cabin| %>
       <div class="card-profile">
@@ -66,7 +67,7 @@
 <div class="profile-details">
   <% if !current_user.bookings.empty? %>
   <h4 class="header" style="color:#659B5E">Your bookings:</h4>
-
+  <br>
   <div class="cards">
     <% current_user.bookings.each do |booking| %>
     <div class="card-profile">
