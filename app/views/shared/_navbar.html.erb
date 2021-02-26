@@ -1,5 +1,8 @@
 <div class="navbar">
 	<div class="navbar-logo">
+    <%= link_to root_path do %>
+      <i class='fas fa-home' id='home'></i>
+    <% end %>
     <% if !user_signed_in? %>
       <%= link_to "Login", new_user_session_path, class: "btn" %>
       <%= link_to "Sign up", new_user_registration_path, class: "btn" %>
@@ -21,7 +24,7 @@
 	<div class="dropdown">
     <%= link_to 'Host Your Cabin', new_cabin_path, class: "btn"  %>
       <% if user_signed_in? %>
-    <%= link_to "#{current_user.first_name}Profile", profile_path, class: "btn" %>
+    <%= link_to "#{current_user.first_name} Profile", profile_path, class: "btn" %>
   <% end %>
 	</div>
 </div>

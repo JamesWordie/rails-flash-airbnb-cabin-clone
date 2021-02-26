@@ -1,25 +1,43 @@
-  .cards-container{
-    margin: 0px !important;
-    margin: auto;
-  }
+.cards-container{
+  margin: 0px !important;
+  margin: auto;
+}
 
-  .card-profile{
-    width: 80%;
+.card-profile{
+  width: 80%;
+  img {
+    border-radius: 10px;
+    margin: 0px 10px 0px 10px;
   }
-  .header{
-    text-align: center;
-  }
+}
+
+.no-dec-profile-link {
+  text-decoration: none;
+  color: #659B5E;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  } 
+}
+
+.header{
+  text-align: center;
+}
+
 .profile-details {
   box-shadow: 0 0 2px $forgreen;
   margin: 40px auto;
   padding: 40px;
+
 }
 
 .profile-buttons{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   .btn{
-    margin: 0 5px;
+    margin: 0 8px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
