@@ -5,13 +5,14 @@
 .back-link {
   font-size: 20px;
   color: $forgreen;
-  opacity:0.4;
+  opacity:1;
   font-family:  $all-font;
 
   &:hover {
     text-decoration: none;
     opacity: 0.8;
-    color: $forgreen;
+    color: white;
+    background-color: $forgreen;
   }
 }
 
