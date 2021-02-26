@@ -9,5 +9,6 @@ class Cabin < ApplicationRecord
   validates :price_per_night, presence: true
   validates :number_of_guests, presence: true
   validates :location, presence: true
+  validates :photo, presence: true
   has_one_attached :photo
 end
