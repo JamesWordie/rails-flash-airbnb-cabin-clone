@@ -1,89 +1,14 @@
-<div class="card">
-  <div class="card-cities">
-    <img src="https://source.unsplash.com/random?cabin" class="card-img-top" alt="log cabin">
-    <div class="card-body">
-      <h4> <%= @cabins[1].name %> </h4>
-      <p class="card-text"><%= @cabins[1].location %></p>
+<% @selected_cabins.each do |cabin| %>
+  <%= link_to cabin_path(cabin), class: "no-dec-link" do %>
+    <div class="card-cabin-index" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url( <%= cl_image_path cabin.photo.key %> );">
+      <h4> <%= cabin.name %> </h4>
+      <div class="cabin-show-text" >
+        <i class="fas fa-users" style="color:white"> <%= cabin.number_of_guests %></i>
+        <i class="fas fa-pound-sign" style="color:white"> <%= cabin.price_per_night %></i>
+        <h5 style="color:white"><%= cabin.location %></h5>
+      </div>
     </div>
-  </div>
-</div>
+    <p style="color:white"><%= cabin.location %></p>
+<% end %>
+<% end %>
 
-<div class="card">
-  <div class="card-cities">
-    <img src="https://source.unsplash.com/random?hut" class="card-img-top" alt="log cabin">
-    <div class="card-body">
-      <h4> <%= @cabins[2].name %> </h4>
-      <p class="card-text"><%= @cabins[2].location %></p>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-cities">
-    <img src="https://source.unsplash.com/random?tiny-house" class="card-img-top" alt="log cabin">
-    <div class="card-body">
-      <h4> <%= @cabins[3].name %> </h4>
-      <p class="card-text"><%= @cabins[3].location %></p>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-cities">
-    <img src="https://source.unsplash.com/random?glamping" class="card-img-top" alt="log cabin">
-    <div class="card-body">
-      <h4> <%= @cabins[4].name %> </h4>
-      <p class="card-text"><%= @cabins[4].location %></p>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-cities">
-    <img src="https://source.unsplash.com/random?log-cabin" class="card-img-top" alt="log cabin">
-    <div class="card-body">
-      <h4> <%= @cabins[5].name %> </h4>
-      <p class="card-text"><%= @cabins[5].location %></p>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-cities">
-    <img src="https://source.unsplash.com/random?log-hut" class="card-img-top" alt="log cabin">
-    <div class="card-body">
-      <h4> <%= @cabins[6].name %> </h4>
-      <p class="card-text"><%= @cabins[6].location %></p>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-cities">
-    <img src="https://source.unsplash.com/random?lake-cabin" class="card-img-top" alt="log cabin">
-    <div class="card-body">
-      <h4> <%= @cabins[7].name %> </h4>
-      <p class="card-text"><%= @cabins[7].location %></p>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-cities">
-    <img src="https://source.unsplash.com/random?luxury-cabin" class="card-img-top" alt="log cabin">
-    <div class="card-body">
-      <h4> <%= @cabins[8].name %> </h4>
-      <p class="card-text"><%= @cabins[8].location %></p>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-cities">
-    <img src="https://source.unsplash.com/random?mountain-cabin" class="card-img-top" alt="log cabin">
-    <div class="card-body">
-      <h4> <%= @cabins[9].name %> </h4>
-      <p class="card-text"><%= @cabins[9].location %></p>
-    </div>
-  </div>
-</div>
