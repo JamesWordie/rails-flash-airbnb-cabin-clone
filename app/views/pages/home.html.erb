@@ -7,11 +7,16 @@
         <%= link_to "Sign up", new_user_registration_path, class: "btn" %>
       <% end %>
     </div>
-    <div class="dropdown", style="position: right" >
+    <div class="home-buttons">
+      <div class="button-for-home">
       <%= link_to 'Host Your Cabin', new_cabin_path, class: "btn"  %>
+      </div>
+
         <% if user_signed_in? %>
-      <%= link_to "#{current_user.first_name}Profile", profile_path, class: "btn" %>
-    <% end %>
+        <div class="button-for-home">
+          <%= link_to "#{current_user.first_name}Profile", profile_path, class: "btn" %>
+        </div>
+        <% end %>
     </div>
   </div>
   <div class="content">
