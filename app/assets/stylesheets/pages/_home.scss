@@ -49,3 +49,16 @@ h2  {
 .container {
   padding: 20px;
 }
+
+#book-a-cabin-button{
+  margin-top: 20px;
+  background-color: #659B5E;
+  color:white;
+  border: 3px solid white;
+}
+
+#book-a-cabin-button:hover{
+  background-color: white;
+  color:#659B5E;
+  border: 3px solid #659B5E;
+}
