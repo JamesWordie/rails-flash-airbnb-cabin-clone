@@ -2,12 +2,13 @@
   <%= link_to cabin_path(cabin), class: "no-dec-link" do %>
   <div class="card-cabin-index" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url( <%= cabin.photo.attached? ? cl_image_path(cabin.photo.key) : "" %> );">
       <h4> <%= cabin.name %> </h4>
-      <div class="cabin-show-text" >
+      <div class="cabin-index-show-text" >
         <i class="fas fa-users" style="color:white"> <%= cabin.number_of_guests %></i>
         <i class="fas fa-pound-sign" style="color:white"> <%= cabin.price_per_night %></i>
         <h5 style="color:white"><%= cabin.location %></h5>
       </div>
     </div>
     <p style="color:white"><%= cabin.location %></p>
-<% end %>
+  <% end %>
+  
 <% end %>
