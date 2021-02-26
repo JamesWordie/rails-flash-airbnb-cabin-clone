@@ -2,44 +2,52 @@
   <%= link_to cabins_path, class: 'back-link' do %>
     <i class="fas fa-angle-double-left"></i> Cabins
   <% end %>
-  <div class="row justify-content-center">
-    <div class="cabin-headers text-center">
-      <h1> <%=  @cabin.name  %> </h1>
-      <p> <%=  @cabin.description  %> </p>
-
-
-      <img class="cabin-image" src= <%= cl_image_path @cabin.photo.key %> alt="">
-      <span class="cabin-show-text">
-        <h5> Price per night: £<%=  @cabin.price_per_night  %> </h5>
-        <h5> Maximum number of guests: <%= @cabin.number_of_guests  %> </h5>
-      </span>
-    </div>
-  </div>
-
-  <!-- Form for new booking -->
-  <div class="booking-form">
-    <div class="row justify-content-center">
-      <div class="col-6">
-        <%= simple_form_for [@cabin, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.submit "Make booking", class: "btn btn-primary" %>
-
-        <% end %>
+  <div class="content-show">
+    <div class="content-details">
+      <div class="row justify-content-center">
+        <div class="cabin-headers text-start">
+          <h1> <%=  @cabin.name  %> </h1>
+          <p> <%=  @cabin.description  %> </p>
+          <img class="cabin-image" src= <%= cl_image_path @cabin.photo.key %> alt="">
+        </div>
       </div>
     </div>
-  </div>
 
-  <% if @cabin.reviews.count > 0 %>
-  <div class="reviews-container">
-    <h3>Here's what other people thought about <%=@cabin.name %>:</h3>
-    <% @cabin.reviews.each do |review| %>
-      <div class="review-card">
-        <h4> <%= "⭐️"*review.rating %> </h4>
-        <p><%= review.content %></p>
+    <div class="content-booking">
+      <div class="booking-form">
+        <div class="row justify-content-center">
+          <h3 class="text-center">Book Now</h3>
+          <%= simple_form_for [@cabin, @booking] do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.submit "Make booking", class: "btn" %>
+          <% end %>
+        </div>
       </div>
-    <% end %>
+
+      <br>
+      <div class="cabin-show-text">
+        <h5>Price per night: £<%=  @cabin.price_per_night  %> </h5>
+        <h5>Maximum number of guests: <%= @cabin.number_of_guests  %> </h5>
+      </div>
+
+      <% if @cabin.reviews.count > 0 %>
+        <div class="reviews-container">
+          <h3>Here's what other people thought about <%=@cabin.name %>:</h3>
+          <% @cabin.reviews.each do |review| %>
+            <div class="review-card">
+              <h4> <%= "⭐️"*review.rating %> </h4>
+              <p><%= review.content %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <% end %>
+  <div id="map-show"
+    style="width: 100%; height: 400px; margin-top: 30px; margin: 0 auto;"
+    data-markers="<%= @marker.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
 
