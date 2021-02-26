@@ -1,15 +1,37 @@
 /* Main navbar */
 .navbar {
+  background-color: rgba(101,155,94,0.6);
 	position: fixed;
 	top: 0px;
 	width: 100%;
 	height: 80px;
-	background-color: #A8DADC;opacity:0.8;
 	display: flex;
 	align-content: space-around !important;
 	padding-left: 40px;
 	padding-right: 40px;
 	z-index: 97;
+}
+
+.navbar-home {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-content: space-around !important;
+  padding-left: 40px;
+  padding-right: 40px;
+  z-index: 97;
+}
+
+
+.navbar-home .btn{
+  background-color: white;
+  position: right;
+}
+.navbar-home .dropdown{
+  position: right;
+  left: 80vw;
 }
 
 .navbar-logo {
@@ -33,3 +55,12 @@
 .dropdown > .btn {
   margin: 10px;
 }
+.navbar .btn{
+    background-color: white;
+  }
+.navbar .btn:hover{
+    color: green !important;
+  }
+  .navbar-home .btn:hover{
+    color: green !important;
+  }
