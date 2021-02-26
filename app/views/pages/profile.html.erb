@@ -72,6 +72,13 @@
     <div class="cards">
       <% current_user.bookings.each do |booking| %>
       <div class="card-profile">
+        
+        <% if booking.cabin.photo.attached? %>
+        <%= cl_image_tag booking.cabin.photo.key, alt: "alttext" %>
+        <% else %>
+        <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+        <% end %>
+
         <h5><%= link_to booking.cabin.name, cabin_path(booking.cabin) %> </h5>
         <p><strong>From:</strong><%= booking.start_date.strftime("%B %d, %Y")%></p><p><strong>To: </strong><%= booking.end_date.strftime("%B %d, %Y") %></p>
         <p>Total Cost: £<%= (booking.end_date - booking.start_date).to_i * booking.cabin.price_per_night %> </p>
