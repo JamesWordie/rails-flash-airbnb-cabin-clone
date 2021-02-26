@@ -86,6 +86,12 @@
   grid-gap: 16px;
 }
 
+.home-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+}
+
 .card-cabin-index {
   background-size: cover;
   background-position: center;
