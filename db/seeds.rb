@@ -2,9 +2,12 @@ require "open-uri"
 
 puts "Emptying database..."
 
-User.destroy_all if Rails.env.development?
-Cabin.destroy_all if Rails.env.development?
-Booking.destroy_all if Rails.env.development?
+# User.destroy_all if Rails.env.development?
+# Cabin.destroy_all if Rails.env.development?
+# Booking.destroy_all if Rails.env.development?
+Booking.destroy_all
+User.destroy_all
+Cabin.destroy_all
 
 puts "Seeding database..."
 
