@@ -7,7 +7,10 @@
   width: 80%;
   img {
     border-radius: 10px;
-    margin: 0px 10px 0px 10px;
+    margin: 10px;
+  }
+  span > h6 {
+    margin-top: 5px;
   }
 }
 
@@ -17,7 +20,7 @@
   &:hover {
     text-decoration: none;
     color: black;
-  } 
+  }
 }
 
 .header{

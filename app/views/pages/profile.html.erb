@@ -16,7 +16,6 @@
               <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
             <% end %>
             <h5 style="color:#659B5E"><%= cabin.name %></h5>
-            <br>
             <p><%= cabin.description %> </p>
             <span>
               <%= link_to 'Edit', edit_cabin_path(cabin), class: "btn" %>
@@ -27,14 +26,14 @@
                 <p><%=  booking.start_date %> - <%=  booking.end_date %></p>
                   <div class="booking-status">
                   <% if booking.status == false %>
-                    <p>status: pending</p>
+                    <p>Status: Pending</p>
                   <% else %>
-                    <p>status:accepted </p>
+                    <p>Status: Accepted</p>
                   <% end %>
 
                   <% if booking.status != true %>
                     <%= simple_form_for [booking] do |f| %>
-                      <%= f.input :status, as: :boolean, selected: false, label: "accept" %>
+                      <%= f.input :status, as: :boolean, selected: false, label: "Accept" %>
                       <%= f.submit "Accept booking", class: "btn" %>
                     <% end %>
                   <% end %>
@@ -47,15 +46,15 @@
       </div>
     <% else %>
       <div class="profile-buttons-else">
-        <p id="add-booking-text">Looks like you've got no bookings... Lets change that!</p>
-        <%= link_to 'Make a booking now', cabins_path, class: "btn" %>
+        <p id="add-cabin-text">Looks like you've not listed any cabins on your profile... If you have a spare cabin you want to rent, list it here!</p>
+        <%= link_to 'Host Your Cabin Today', new_cabin_path, class: "btn" %>
       </div>
     <% end %>
   </div>
 
   <div class="profile-details">
     <% if !current_user.bookings.empty? %>
-      <h4 class="header" style="color:#659B5E">Your bookings:</h4>
+      <h4 class="header" style="color:#659B5E">Your Upcoming Bookings:</h4>
       <br>
       <div class="cards">
         <% current_user.bookings.each do |booking| %>
@@ -65,9 +64,9 @@
             <% else %>
               <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
             <% end %>
-            <h5><%= link_to booking.cabin.name, cabin_path(booking.cabin), class: "no-dec-profile-link" %> </h5>
             <br>
-            <p><strong>From:</strong><%= booking.start_date.strftime("%B %d, %Y")%></p><p><strong>To: </strong><%= booking.end_date.strftime("%B %d, %Y") %></p>
+            <h4><%= link_to booking.cabin.name, cabin_path(booking.cabin), class: "no-dec-profile-link" %> </h4>
+            <p><strong>From: </strong><%= booking.start_date.strftime("%B %d, %Y")%></p><p><strong>To: </strong><%= booking.end_date.strftime("%B %d, %Y") %></p>
             <p>Total Cost: £<%= (booking.end_date - booking.start_date).to_i * booking.cabin.price_per_night %> </p>
             <div class="profile-buttons">
               <%= link_to 'Edit', edit_booking_path(booking), class: "btn" %>
@@ -79,8 +78,8 @@
       </div>
     <% else %>
       <div class="profile-buttons-else">
-        <p id="add-cabin-text">Looks like you got no cabins on your profile... If you have a spare cabin you want to rent press here!</p>
-        <%= link_to 'Host your cabin today', new_cabin_path, class: "btn" %>
+        <p id="add-booking-text">Looks like you've not got any bookings... Let's change that!</p>
+        <%= link_to 'Make a Booking', cabins_path, class: "btn" %>
       </div>
     <% end %>
   </div>
