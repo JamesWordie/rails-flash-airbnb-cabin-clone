@@ -8,28 +8,15 @@ h2  {
   color: #66462C;
 }
 
-.countries-card {
-  border-radius: 10px;
-  border: 2px solid #659B5E !important;
-}
 
-.coutries-container{
-  margin: 20px auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-  text-align: center;
-  border-radius: 10px;
-  width: 80vw;
-}
-
-.cabins-container{
+.home-cabins-container{
   margin: 40px auto;
   display: grid;
   width: 100vw;
   background-color: #659B5E;
   border-radius: 0px;
   text-align: center;
+  grid-gap:15px;
 
 }
 
@@ -46,8 +33,10 @@ h2  {
   height: 120px;
 }
 
-.container {
+.home-container {
   padding: 20px;
+  display:grid;
+  grid-gap: 20px;
 }
 
 #book-a-cabin-button{
@@ -61,4 +50,8 @@ h2  {
   background-color: white;
   color:#659B5E;
   border: 3px solid #659B5E;
+}
+
+.card-cabin-index{
+  grid-gap: 15px;
 }
