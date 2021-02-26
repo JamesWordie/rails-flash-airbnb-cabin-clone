@@ -17,19 +17,16 @@
 
   <div class="profile-details">
     <% if !current_user.cabins.empty? %>
-    <h4 class="header">Your Cabins:</h4>
+    <h4 class="header" style="color:#659B5E">Your Cabins:</h4>
     <div class="cards">
       <% current_user.cabins.each do |cabin| %>
-
       <div class="card-profile">
-
         <% if cabin.photo.attached? %>
         <%= cl_image_tag cabin.photo.key, alt: "alttext" %>
         <% else %>
         <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
         <% end %>
-
-        <h2><%= cabin.name %> </h2>
+        <h5><%= link_to cabin.name, cabin_path(cabin), class: "no-dec-profile-link" %></h5>
         <p><%= cabin.description %> </p>
         <span>
           <%= link_to 'Edit', edit_cabin_path(cabin), class: "btn" %>
@@ -37,7 +34,6 @@
           <% if !cabin.bookings.empty? %>
           <h2> Bookings </h2>
           <% else %>
-
           <p class="pt-3">No current bookings</p>
           <% end %>
           <% cabin.bookings.each do |booking| %>
@@ -48,7 +44,6 @@
             <% else %>
             <p>status:accepted </p>
             <%end%>
-
             <% if booking.status != true %>
             <%= simple_form_for [booking] do |f| %>
             <%= f.input :status, as: :boolean, selected: false, label: "accept" %>
@@ -65,10 +60,9 @@
     <% end %>
   </div>
 
-
   <div class="profile-details">
     <% if !current_user.bookings.empty? %>
-    <h4 class="header">Your bookings:</h4>
+    <h4 class="header" style="color:#659B5E">Your bookings:</h4>
     <div class="cards">
       <% current_user.bookings.each do |booking| %>
       <div class="card-profile">
@@ -78,8 +72,7 @@
         <% else %>
         <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
         <% end %>
-
-        <h5><%= link_to booking.cabin.name, cabin_path(booking.cabin) %> </h5>
+        <h5><%= link_to booking.cabin.name, cabin_path(booking.cabin), class: "no-dec-profile-link" %></h5>
         <p><strong>From:</strong><%= booking.start_date.strftime("%B %d, %Y")%></p><p><strong>To: </strong><%= booking.end_date.strftime("%B %d, %Y") %></p>
         <p>Total Cost: £<%= (booking.end_date - booking.start_date).to_i * booking.cabin.price_per_night %> </p>
         <div class="profile-buttons">
