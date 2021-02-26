@@ -16,6 +16,7 @@
               <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
             <% end %>
             <h5 style="color:#659B5E"><%= cabin.name %></h5>
+            <br>
             <p><%= cabin.description %> </p>
             <span>
               <%= link_to 'Edit', edit_cabin_path(cabin), class: "btn" %>
@@ -64,8 +65,8 @@
             <% else %>
               <img src="https://images.pexels.com/photos/4947737/pexels-photo-4947737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
             <% end %>
+            <h5><%= link_to booking.cabin.name, cabin_path(booking.cabin), class: "no-dec-profile-link" %> </h5>
             <br>
-            <h4><%= link_to booking.cabin.name, cabin_path(booking.cabin), class: "no-dec-profile-link" %> </h4>
             <p><strong>From: </strong><%= booking.start_date.strftime("%B %d, %Y")%></p><p><strong>To: </strong><%= booking.end_date.strftime("%B %d, %Y") %></p>
             <p>Total Cost: £<%= (booking.end_date - booking.start_date).to_i * booking.cabin.price_per_night %> </p>
             <div class="profile-buttons">
