@@ -10,6 +10,15 @@
 	padding-left: 40px;
 	padding-right: 40px;
 	z-index: 97;
+  transition: transform 0.4s;
+}
+
+.scroll-down .navbar {
+  transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up .navbar {
+  sticky: top !important;
 }
 
 .navbar-home {

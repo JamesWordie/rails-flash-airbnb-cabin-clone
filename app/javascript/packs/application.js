@@ -27,10 +27,35 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initMapboxShow } from '../plugins/init_mapbox_show';
 import { initAutocomplete } from '../plugins/init_autocomplete';
+// import { navbarScroll } from '../plugins/navbar_scroll';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
   initMapboxShow();
   initAutocomplete();
+  const body = document.body;
+  const scrollUp = "scroll-up";
+  const scrollDown = "scroll-down";
+  let lastScroll = 0;
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll <= 0) {
+      body.classList.remove(scrollUp);
+      return;
+    }
+    if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
+      // down
+      body.classList.remove(scrollUp);
+      body.classList.add(scrollDown);
+    } else if (currentScroll < lastScroll && body.classList.contains(scrollDown)) {
+      // up
+
+      body.classList.remove(scrollDown);
+      body.classList.add(scrollUp);
+    }
+    lastScroll = currentScroll;
+  });
 });
